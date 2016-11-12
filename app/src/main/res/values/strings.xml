@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Calculadora de combustível</string>
+    <string name="alcool">Álcool</string>
+    <string name="gasolina">Gasolina</string>
+    <string name="calcular_se_vale_a_pena">Carro Flex??? \n Abastecer com \n Álcool ou Gasolina???</string>
+    <string name="calcular">Calcular</string>
+    <string name="limpar">Limpar</string>
+    <string name="historico">Histórico</string>
+    <string name="valor_zerado">R$ 0,000</string>
+    <string name="title_activity_historico">HistoricoActivity</string>
+
+</resources>

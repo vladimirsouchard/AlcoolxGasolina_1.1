@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:stretchColumns="0,1,2"
+    tools:context="com.souchard.alcoolxgasolina.MainActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.65"
+            android:drawableLeft="@drawable/odometro_3"
+            android:paddingTop="20dp"
+            android:text="@string/calcular_se_vale_a_pena"
+            android:textAlignment="center"
+            android:textColor="#006400"
+            android:textSize="25sp"
+            android:textStyle="normal|bold"
+            tools:ignore="InefficientWeight,RtlHardcoded" />
+
+    </LinearLayout>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/EditTextAlcool"
+            android:layout_width="wrap_content"
+            android:layout_height="50sp"
+            android:background="@drawable/border"
+            android:backgroundTintMode="src_over"
+            android:hint="@string/valor_zerado"
+            android:inputType="numberDecimal"
+            android:maxLength="5"
+            android:maxLines="1"
+            android:paddingTop="15dp"
+            android:textAlignment="center"
+            android:textColorHint="@color/colorAccent"
+            android:textColorLink="@color/colorAccent"
+            android:textSize="30sp">
+
+        </EditText>
+
+        <EditText
+            android:id="@+id/EditTextGasolina"
+            android:layout_width="wrap_content"
+            android:layout_height="50sp"
+            android:background="@drawable/border"
+            android:backgroundTintMode="src_over"
+            android:hint="@string/valor_zerado"
+            android:inputType="numberDecimal"
+            android:maxLength="5"
+            android:maxLines="1"
+            android:paddingTop="15dp"
+            android:textAlignment="center"
+            android:textColorHint="@color/colorAccent"
+            android:textColorLink="@color/colorAccent"
+            android:textSize="30sp">
+
+        </EditText>
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/textViewAlcool2"
+            android:layout_gravity="center"
+            android:text="@string/alcool"
+            android:textColor="#006400"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textViewGasolina2"
+            android:layout_gravity="center"
+            android:text="@string/gasolina"
+            android:textColor="#FFD700"
+            android:textSize="20sp" />
+    </TableRow>
+
+
+    <TableRow>
+
+        <Button
+            android:id="@+id/btnCalcular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/calcular"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/buttonLimpar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/limpar"
+            style="@android:style/Widget.Material.Light.Button" />
+
+
+    </TableRow>
+
+    <!--colocando dois TextView um por cima do outro-->
+    <FrameLayout>
+
+        <TextView
+            android:id="@+id/resultadoPositivo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="20dp"
+            android:textAlignment="center"
+            android:textColor="#006400"
+            android:textSize="20sp"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:id="@+id/resultadoNegativo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="20dp"
+            android:textAlignment="center"
+            android:textColor="#FFD700"
+            android:textSize="20sp"
+            android:textStyle="normal|bold" />
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/buttonHistorico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/historico" />
+
+    <FrameLayout>
+
+        <ImageView
+            android:id="@+id/imageViewLogo"
+            android:layout_width="220dp"
+            android:layout_height="75dp"
+            android:layout_gravity="end"
+            android:src="@drawable/logo_blade"
+            tools:ignore="ContentDescription" />
+    </FrameLayout>
+</TableLayout>
