@@ -62,14 +62,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Historico historico = new Historico();
         switch (view.getId()) {
             case R.id.btnCalcular:
-                if (EditTextAlcool.getText().toString().equals("") || EditTextGasolina.getText().toString().equals("")) {
+                //If validando se os campos álcool e gasolina possuem valores
+                if (EditTextAlcool.getText().toString().equals("") && EditTextGasolina.getText().toString().equals("")) {
                     AlertDialog.Builder dialogo = new
                             AlertDialog.Builder(MainActivity.this);
                     dialogo.setTitle("ALERTA");
                     dialogo.setMessage("Informe os valores da gasolina e do álcool");
                     dialogo.setNeutralButton("OK", null);
                     dialogo.show();
-                } else {
+                    //If validando se o campo álcool possui valor
+                } else if (EditTextAlcool.getText().toString().equals("")){
+                AlertDialog.Builder dialogo = new
+                        AlertDialog.Builder(MainActivity.this);
+                dialogo.setTitle("ALERTA");
+                dialogo.setMessage("Informe o valor do álcool.");
+                dialogo.setNeutralButton("OK", null);
+                dialogo.show();
+                    //If validando se o campo gasolina possui valor
+                 } else if (EditTextGasolina.getText().toString().equals("")) {
+                AlertDialog.Builder dialogo = new
+                        AlertDialog.Builder(MainActivity.this);
+                dialogo.setTitle("ALERTA");
+                dialogo.setMessage("Informe o valor da gasolina.");
+                dialogo.setNeutralButton("OK", null);
+                dialogo.show();
+            }else {
 
                     //Obtendo os valores para o cálculo da porcentagem no resultado
                     double VAlcool = Double.parseDouble(EditTextAlcool.getText().toString());
@@ -94,34 +111,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             //Calculo da porcentagem para o álcool
                             Double porcentagem = calculo * 100;
                             BigDecimal porcentagem_exata = new BigDecimal(porcentagem).setScale(2, RoundingMode.HALF_DOWN);
-                            TextViewresultadoPositivo.setText("Neste momento o melhor é o ÁLCOOL. Pois o valor do álcool esta " + porcentagem_exata +  "% abaixo do valor da gasolina.");
+                            TextViewresultadoPositivo.setText("Neste momento o melhor é o ÁLCOOL. Pois o valor do álcool esta " + porcentagem_exata +  "% do valor da gasolina.");
                             EditTextAlcool.setText("");
                             EditTextGasolina.setText("");
                             TextViewresultadoNegativo.setText("");
-                            break;
                         } else {
                             //Calculo da porcentagem para a gasolina
                             Double porcentagem = calculo * 100;
                             BigDecimal porcentagem_exata = new BigDecimal(porcentagem).setScale(2, RoundingMode.HALF_DOWN);
-                            TextViewresultadoNegativo.setText("Neste momento melhor é GASOLINA. Pois o valor do álcool esta " + porcentagem_exata + "% do valor da gasolina.");
+                            TextViewresultadoNegativo.setText("Neste momento melhor é GASOLINA. Pois o valor da gasolina esta " + porcentagem_exata + "% do valor do valor do álcool.");
                             EditTextAlcool.setText("");
                             EditTextGasolina.setText("");
                             TextViewresultadoPositivo.setText("");
-                            break;
                         }
                     }
                 }
+                break;
+            case R.id.buttonHistorico:
+                //Chamada para a activity histórico
+                Intent intent = new Intent(MainActivity.this, HistoricoActivity.class);
+                startActivity(intent);
+                break;
+                //Chamada para o botão limpar (TextView,EditText)
             case R.id.buttonLimpar:
                 EditTextAlcool.setText("");
                 EditTextGasolina.setText("");
                 TextViewresultadoPositivo.setText("");
                 TextViewresultadoNegativo.setText("");
-                break;
-
-            case R.id.buttonHistorico:
-                //Chamada para a activity histórico
-                Intent intent = new Intent(MainActivity.this, HistoricoActivity.class);
-                startActivity(intent);
                 break;
         }
     }

@@ -1,2 +1,6 @@
 # AlcoolxGasolina
-Versão 1.0
+12/11/2016
+Versão 1.1
+
+- Tratamento para os campos de entrada (Álcool, Gasolina)
+- Corrigido Switch/Case (Erro no botão limpar).
