@@ -10,16 +10,12 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.souchard.alcoolxgasolina.dao.CriarBanco;
 import com.souchard.alcoolxgasolina.dao.Historico;
-
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.ArrayList;
 
 import static com.souchard.alcoolxgasolina.R.layout.activity_main;
 
@@ -34,7 +30,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button buttonLimpar;
     Button buttonHistorico;
     int check = 0;
-    ArrayList<Historico> listaHistorico;
     private CriarBanco bd;
 
     @Override
@@ -42,7 +37,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         bd = new CriarBanco(this);
         setContentView(activity_main);
-
 
         EditTextAlcool = (EditText) findViewById(R.id.EditTextAlcool);
         //Colocando a mascara para forçar somente 3 digitos depois do ponto
@@ -77,10 +71,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     dialogo.show();
                 } else {
 
-                  /*  double alcool = Double.parseDouble(EditTextAlcool.getText().toString());
-                    double gasolina = Double.parseDouble(EditTextGasolina.getText().toString());
-                    double calculo = alcool / gasolina;
-                    */
                     //Obtendo os valores para o cálculo da porcentagem no resultado
                     double VAlcool = Double.parseDouble(EditTextAlcool.getText().toString());
                     double VGasolina = Double.parseDouble(EditTextGasolina.getText().toString());
@@ -129,10 +119,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.buttonHistorico:
-
+                //Chamada para a activity histórico
                 Intent intent = new Intent(MainActivity.this, HistoricoActivity.class);
                 startActivity(intent);
-
                 break;
         }
     }

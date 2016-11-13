@@ -3,13 +3,9 @@ package com.souchard.alcoolxgasolina;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
-
 import com.souchard.alcoolxgasolina.dao.CriarBanco;
 import com.souchard.alcoolxgasolina.dao.Historico;
-
 import java.util.ArrayList;
-
-import static com.souchard.alcoolxgasolina.R.layout.activity_main;
 
 /**
  * Created by Vladimir on 12/11/2016.
@@ -18,7 +14,6 @@ import static com.souchard.alcoolxgasolina.R.layout.activity_main;
 
 public class HistoricoActivity extends AppCompatActivity {
     private CriarBanco bd;
-
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +24,5 @@ public class HistoricoActivity extends AppCompatActivity {
         listaHistorico = bd.getAllHistorico();
         HistoricoAdapter adapter = new HistoricoAdapter(this, listaHistorico);
         lista.setAdapter(adapter);
-
     }
 }
