@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             //Calculo da porcentagem para o álcool
                             Double porcentagem = calculo * 100;
                             BigDecimal porcentagem_exata = new BigDecimal(porcentagem).setScale(2, RoundingMode.HALF_DOWN);
-                            TextViewresultadoPositivo.setText("Neste momento o melhor é o ÁLCOOL. Pois o valor do álcool esta " + porcentagem_exata +  "% do valor da gasolina.");
+                            TextViewresultadoPositivo.setText("Neste momento o melhor é o ÁLCOOL, pois o valor está " + porcentagem_exata +  "% do valor da gasolina.");
                             EditTextAlcool.setText("");
                             EditTextGasolina.setText("");
                             TextViewresultadoNegativo.setText("");
@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             //Calculo da porcentagem para a gasolina
                             Double porcentagem = calculo * 100;
                             BigDecimal porcentagem_exata = new BigDecimal(porcentagem).setScale(2, RoundingMode.HALF_DOWN);
-                            TextViewresultadoNegativo.setText("Neste momento melhor é GASOLINA. Pois o valor da gasolina esta " + porcentagem_exata + "% do valor do valor do álcool.");
+                            TextViewresultadoNegativo.setText("Neste momento melhor é GASOLINA, pois o valor está " + porcentagem_exata + "% do valor do álcool.");
                             EditTextAlcool.setText("");
                             EditTextGasolina.setText("");
                             TextViewresultadoPositivo.setText("");

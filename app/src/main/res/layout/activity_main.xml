@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -78,14 +77,16 @@
             android:layout_gravity="center"
             android:text="@string/alcool"
             android:textColor="#006400"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="normal|bold" />
 
         <TextView
             android:id="@+id/textViewGasolina2"
             android:layout_gravity="center"
             android:text="@string/gasolina"
             android:textColor="#FFD700"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="normal|bold" />
     </TableRow>
 
 
