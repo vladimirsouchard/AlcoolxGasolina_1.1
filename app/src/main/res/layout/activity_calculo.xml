@@ -112,4 +112,13 @@
         android:id="@+id/textViewResultado"
         android:textAlignment="center" />
 
+    <FrameLayout>
+        <ImageView
+            android:id="@+id/imageViewLogo"
+            android:layout_width="220dp"
+            android:layout_height="75dp"
+            android:layout_gravity="end"
+            android:src="@drawable/logo_blade"
+            tools:ignore="ContentDescription" />
+    </FrameLayout>
 </TableLayout>
