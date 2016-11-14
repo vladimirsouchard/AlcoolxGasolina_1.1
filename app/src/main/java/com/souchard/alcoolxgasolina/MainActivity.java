@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView TextViewresultadoNegativo;
     Button buttonLimpar;
     Button buttonHistorico;
+    Button buttonCalcConsumo;
     int check = 0;
     private CriarBanco bd;
 
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnCalcular = (Button) findViewById(R.id.btnCalcular);
         buttonLimpar = (Button) findViewById(R.id.buttonLimpar);
         buttonHistorico = (Button) findViewById(R.id.buttonHistorico);
+        buttonCalcConsumo = (Button) findViewById(R.id.buttonCalcConsumo);
         // TextViewresultado = (TextView) findViewById(R.id.resultado);
         TextViewresultadoPositivo = (TextView) findViewById(R.id.resultadoPositivo);
         TextViewresultadoNegativo = (TextView) findViewById(R.id.resultadoNegativo);
@@ -54,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnCalcular.setOnClickListener(this);
         buttonLimpar.setOnClickListener(this);
         buttonHistorico.setOnClickListener(this);
+        buttonCalcConsumo.setOnClickListener(this);
     }
 
     @Override
@@ -115,6 +118,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             EditTextAlcool.setText("");
                             EditTextGasolina.setText("");
                             TextViewresultadoNegativo.setText("");
+                            EditTextAlcool.requestFocus();
                         } else {
                             //Calculo da porcentagem para a gasolina
                             Double porcentagem = calculo * 100;
@@ -123,6 +127,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             EditTextAlcool.setText("");
                             EditTextGasolina.setText("");
                             TextViewresultadoPositivo.setText("");
+                            EditTextAlcool.requestFocus();
                         }
                     }
                 }
@@ -138,6 +143,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 EditTextGasolina.setText("");
                 TextViewresultadoPositivo.setText("");
                 TextViewresultadoNegativo.setText("");
+                EditTextAlcool.requestFocus();
+                break;
+
+            case R.id.buttonCalcConsumo:
+                //Chamada para a activity Cálculo
+                Intent intentCalc = new Intent(MainActivity.this, CalculoActivity.class);
+                startActivity(intentCalc);
                 break;
         }
     }

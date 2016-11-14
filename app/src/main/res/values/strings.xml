@@ -8,5 +8,9 @@
     <string name="historico">Histórico</string>
     <string name="valor_zerado">R$ 0,000</string>
     <string name="title_activity_historico">HistoricoActivity</string>
+    <string name="consumo">Cálculo do Consumo</string>
+    <string name="kilometragem">KM percorrida</string>
+    <string name="calculo_consumo">Consumo Médio</string>
+    <string name="litros">Litros</string>
 
 </resources>
